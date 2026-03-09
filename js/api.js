@@ -1,7 +1,8 @@
 const DEFAULT_API_BASE = (() => {
   const host = window.location.hostname || "localhost";
-  const protocol = window.location.protocol || "http:";
-  return `${protocol}//${host}:4000/api`;
+  const localHosts = new Set(["localhost", "127.0.0.1"]);
+  if (localHosts.has(host)) return "http://localhost:4000/api";
+  return "https://kgl-backend-e1vj.onrender.com/api";
 })();
 const SESSION_KEY = "kgl_user";
 const API_BASE_KEY = "kgl_api_base";
@@ -49,7 +50,7 @@ async function request(path, { method = "GET", body } = {}) {
   try {
     res = await fetch(url, options);
   } catch {
-    throw new Error("Failed to fetch. Ensure backend is running on http://localhost:4000");
+    throw new Error("Failed to fetch. Check backend URL or ensure backend is running.");
   }
   const text = await res.text();
   let data = null;
@@ -133,3 +134,4 @@ export async function getReportSummary() {
 export async function getReportStock() {
   return request("/reports/stock");
 }
+
