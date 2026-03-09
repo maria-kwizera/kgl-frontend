@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports | KGL</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <div class="brand">KGL Director</div>
+      <nav class="nav">
+        <a href="director-dashboard.html">Dashboard</a>
+        <a href="reports.html">Reports (Aggregated)</a>
+        <a href="#" class="nav-logout" data-action="logout">Logout</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <div id="topbarSlot"></div>
+      <section class="card">
+        <div class="actions-row">
+          <span id="reportSource" class="pill">Source: Loading...</span>
+          <div>
+            <button id="refreshReportBtn" class="btn btn-secondary" type="button">Refresh</button>
+            <button id="resetLocalBtn" class="btn btn-secondary" type="button">Reset Local Demo Data</button>
+          </div>
+        </div>
+      </section>
+      <section class="grid-3 section-spaced">
+        <article class="card"><p>Total Procurement Cost</p><div id="kpiProc" class="kpi">UGX 0</div></article>
+        <article class="card"><p>Total Cash Sales</p><div id="kpiSales" class="kpi">UGX 0</div></article>
+        <article class="card"><p>Total Credit Outstanding</p><div id="kpiCredit" class="kpi">UGX 0</div></article>
+      </section>
+      <section class="card section-spaced">
+        <h3>Current Stock by Produce</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Produce</th><th>Stock (kg)</th></tr></thead>
+            <tbody id="stockRows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="../js/pages/reports.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent Dashboard | KGL</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <div class="brand">KGL Agent</div>
+      <nav class="nav">
+        <a href="agent-dashboard.html">Dashboard</a>
+        <a href="sales.html">Sales</a>
+        <a href="credit-sales.html">Credit Sales</a>
+        <a href="#" class="nav-logout" data-action="logout">Logout</a>
+      </nav>
+    </aside>
+    <main class="main agent-main">
+      <section class="manager-hero">
+        <div id="topbarSlot"></div>
+        <div class="manager-hero-meta">
+          <p class="small" id="agentSource">Source: Loading...</p>
+          <button id="agentRefreshBtn" class="btn btn-secondary" type="button">Refresh</button>
+        </div>
+      </section>
+
+      <section class="card section-spaced manager-table-card">
+        <div class="manager-table-head">
+          <h3 class="heading-tight">Maganjo Branch Overview</h3>
+        </div>
+      </section>
+
+      <section class="grid-2 section-spaced">
+        <article class="card kpi-card">
+          <p>Total Cash Sales</p>
+          <div id="cashTotal" class="kpi">UGX 0</div>
+        </article>
+        <article class="card kpi-card">
+          <p>Outstanding Credit</p>
+          <div id="creditOutstanding" class="kpi">UGX 0</div>
+        </article>
+      </section>
+
+      <section class="grid-2 section-spaced">
+        <article class="card manager-table-card">
+          <h3 class="heading-tight">Sales Overview</h3>
+          <div id="salesBars" class="bar-board table-top"></div>
+        </article>
+        <article class="card manager-table-card">
+          <h3 class="heading-tight">Credit Overview</h3>
+          <div id="creditBars" class="bar-board table-top"></div>
+        </article>
+      </section>
+
+      <section class="card section-spaced manager-table-card">
+        <h3>Recent Activity</h3>
+        <div class="table-wrap table-top">
+          <table>
+            <thead><tr><th>Type</th><th>Produce</th><th>Buyer</th><th>Amount (UGX)</th><th>Date</th></tr></thead>
+            <tbody id="activityRows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="../js/pages/agent-dashboard.js"></script>
+</body>
+</html>

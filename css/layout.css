@@ -1,0 +1,128 @@
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 272px 1fr;
+}
+
+.sidebar {
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 28px 16px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)),
+    linear-gradient(180deg, #1b5e3a 0%, #144c30 55%, #0f3d27 100%);
+  color: #edf8ef;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  min-height: 100vh;
+}
+
+.brand {
+  font-size: 1.1rem;
+  margin-bottom: 22px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.nav a {
+  display: block;
+  text-decoration: none;
+  padding: 11px 12px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  color: #e7f7eb;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.nav a.active,
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(2px);
+}
+
+.nav a.nav-logout {
+  margin-top: 10px;
+  background: rgba(203, 47, 47, 0.25);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #fff2f2;
+}
+
+.nav a.nav-logout:hover {
+  background: rgba(203, 47, 47, 0.38);
+}
+
+.main {
+  padding: 28px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.topbar p {
+  margin-bottom: 0;
+}
+
+.company-title-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #d2e3d0;
+  background: linear-gradient(180deg, #f8fcf7 0%, #edf6ea 100%);
+  color: #1a6b33;
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+}
+
+.company-title-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #2a8248 0%, #1f6a38 100%);
+  box-shadow: 0 0 0 3px rgba(31, 106, 56, 0.13);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 920px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: relative;
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    padding-bottom: 14px;
+  }
+
+  .main {
+    padding: 16px;
+  }
+
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}

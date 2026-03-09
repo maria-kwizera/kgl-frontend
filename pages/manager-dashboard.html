@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manager Dashboard | KGL</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <div class="brand">KGL Manager</div>
+      <nav class="nav">
+        <a href="manager-dashboard.html">Dashboard</a>
+        <a href="#currentStockSection">Current Stock</a>
+        <a href="procurement.html">Procurement</a>
+        <a href="sales.html">Sales</a>
+        <a href="credit-sales.html">Credit Sales</a>
+        <a href="#" class="nav-logout" data-action="logout">Logout</a>
+      </nav>
+    </aside>
+    <main class="main manager-main">
+      <section class="manager-hero">
+        <div id="topbarSlot"></div>
+        <div class="manager-hero-meta">
+          <p class="small" id="managerSource">Source: Loading...</p>
+          <button id="managerRefreshBtn" class="btn btn-secondary" type="button">Refresh Data</button>
+        </div>
+      </section>
+
+      <section class="card section-spaced manager-table-card">
+        <div class="manager-table-head">
+          <h3 class="heading-tight">Maganjo Branch Overview</h3>
+        </div>
+      </section>
+
+      <section class="grid-2 section-spaced">
+        <article class="card kpi-card">
+          <p>Total Cash Sales</p>
+          <div id="managerCashTotal" class="kpi">UGX 0</div>
+        </article>
+        <article class="card kpi-card">
+          <p>Outstanding Credit</p>
+          <div id="managerCreditOutstanding" class="kpi">UGX 0</div>
+        </article>
+      </section>
+
+      <section class="grid-2 section-spaced">
+        <article class="card manager-table-card">
+          <h3 class="heading-tight">Sales Overview</h3>
+          <div id="managerSalesBars" class="bar-board table-top"></div>
+        </article>
+        <article class="card manager-table-card">
+          <h3 class="heading-tight">Credit Overview</h3>
+          <div id="managerCreditBars" class="bar-board table-top"></div>
+        </article>
+      </section>
+
+      <section class="grid-3 section-spaced manager-kpis">
+        <article class="card kpi-card">
+          <p>Procurement Entries</p>
+          <div id="procCount" class="kpi">0</div>
+          <span class="pill">Supply</span>
+        </article>
+        <article class="card kpi-card">
+          <p>Cash Sales Entries</p>
+          <div id="salesCount" class="kpi">0</div>
+          <span class="pill">Revenue</span>
+        </article>
+        <article class="card kpi-card">
+          <p>Credit Sales Entries</p>
+          <div id="creditCount" class="kpi">0</div>
+          <span class="pill">Outstanding</span>
+        </article>
+      </section>
+
+      <section id="currentStockSection" class="card section-spaced manager-table-card">
+        <div class="manager-table-head">
+          <h3 class="heading-tight">Current Stock by Produce</h3>
+          <span class="small">Live stock in kg based on procurement and sales records</span>
+        </div>
+        <div class="table-wrap table-top">
+          <table>
+            <thead><tr><th>Produce</th><th>Stock (kg)</th></tr></thead>
+            <tbody id="managerStockRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card section-spaced manager-table-card">
+        <div class="manager-table-head">
+          <h3 class="heading-tight">Recent Activity</h3>
+          <span class="small">Latest 8 records across procurement and sales</span>
+        </div>
+        <div class="table-wrap table-top">
+          <table>
+            <thead><tr><th>Type</th><th>Produce</th><th>Name</th><th>Amount (UGX)</th><th>Date</th></tr></thead>
+            <tbody id="activityRows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="../js/pages/manager-dashboard.js"></script>
+</body>
+</html>

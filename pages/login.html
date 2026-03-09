@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KGL Login</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body>
+  <main class="auth-wrap">
+    <section class="auth-card auth-card-portal">
+      <div class="auth-logo" aria-hidden="true">
+        <img src="../assets/kgl-logo-mark.svg" alt="" />
+      </div>
+      <h1>KGL Portal</h1>
+      <p class="auth-subtitle">Enter your credentials to access your dashboard</p>
+      <form id="loginForm" class="form-top auth-form">
+        <div class="field auth-field">
+          <label for="username">Username</label>
+          <input id="username" name="username" placeholder="Enter your username" required />
+        </div>
+        <div class="field auth-field auth-password-field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Enter your password" required />
+          <button id="togglePasswordBtn" class="auth-eye-btn" type="button" aria-label="Show password">Show</button>
+        </div>
+        <label class="auth-remember">
+          <input id="rememberMe" name="rememberMe" type="checkbox" />
+          <span>Remember me</span>
+        </label>
+        <button class="btn btn-primary auth-submit-btn" type="submit">Secure Login</button>
+        <p id="loginError" class="error auth-error"></p>
+      </form>
+      <p class="auth-footer">(c) 2026 Karibu Groceries Ltd. All rights reserved.</p>
+    </section>
+  </main>
+  <script type="module" src="../js/pages/login.js"></script>
+</body>
+</html>
+

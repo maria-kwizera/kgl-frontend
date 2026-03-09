@@ -1,0 +1,59 @@
+:root {
+  --bg: #f3f5f1;
+  --surface: #ffffff;
+  --surface-soft: #f8faf6;
+  --text: #152016;
+  --muted: #566457;
+  --line: #d7e0d4;
+  --primary: #1f6a38;
+  --primary-2: #097a2f;
+  --accent: #b9863d;
+  --warn: #9b5a00;
+  --danger: #b11e1e;
+  --radius: 14px;
+  --radius-sm: 10px;
+  --shadow: 0 12px 30px rgba(15, 38, 20, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", "Segoe UI", Tahoma, sans-serif;
+  line-height: 1.45;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(18, 80, 45, 0.12), transparent 38%),
+    radial-gradient(circle at 100% 0%, rgba(203, 169, 112, 0.16), transparent 34%),
+    radial-gradient(circle at 50% 100%, rgba(28, 111, 63, 0.08), transparent 40%),
+    linear-gradient(165deg, #eef2ec 0%, #e6eee5 42%, #f4f8f1 100%);
+}
+
+a {
+  color: inherit;
+}
+
+h1, h2, h3 {
+  margin: 0 0 10px;
+  color: #0f1b10;
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 3.4vw, 2.5rem);
+}
+
+h2 {
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+p {
+  margin: 0 0 12px;
+  color: var(--muted);
+}

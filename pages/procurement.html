@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Procurement | KGL</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <div class="brand">KGL Manager</div>
+      <nav class="nav">
+        <a href="manager-dashboard.html">Dashboard</a>
+        <a href="manager-dashboard.html#currentStockSection">Current Stock</a>
+        <a href="procurement.html" data-role-only="manager">Procurement</a>
+        <a href="sales.html">Sales</a>
+        <a href="credit-sales.html">Credit Sales</a>
+        <a href="#" class="nav-logout" data-action="logout">Logout</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <div id="topbarSlot"></div>
+      <section class="card">
+        <h3>Record Procured Produce</h3>
+        <form id="procurementForm" class="grid-2 form-top">
+          <div class="field"><label>Name of produce</label><select id="produceName" name="produceName"></select><p id="produceNameErr" class="error"></p></div>
+          <div class="field"><label>Type of produce</label><input id="produceType" name="produceType" /><p id="produceTypeErr" class="error"></p></div>
+          <div class="field"><label>Date</label><input id="procDate" name="procDate" type="date" /><p id="procDateErr" class="error"></p></div>
+          <div class="field"><label>Time</label><input id="procTime" name="procTime" type="time" /><p id="procTimeErr" class="error"></p></div>
+          <div class="field"><label>Tonnage (kg)</label><input id="tonnageKg" name="tonnageKg" /><p id="tonnageKgErr" class="error"></p></div>
+          <div class="field"><label>Cost (UGX)</label><input id="costUgx" name="costUgx" /><p id="costUgxErr" class="error"></p></div>
+          <div class="field"><label>Dealer name</label><input id="dealerName" name="dealerName" /><p id="dealerNameErr" class="error"></p></div>
+          <div class="field"><label>Branch name</label><select id="branchName" name="branchName"></select><p id="branchNameErr" class="error"></p></div>
+          <div class="field"><label>Dealer contact</label><input id="contact" name="contact" /><p id="contactErr" class="error"></p></div>
+          <div class="field"><label>Selling price (UGX)</label><input id="sellPrice" name="sellPrice" /><p id="sellPriceErr" class="error"></p></div>
+          <div><button type="submit" class="btn btn-primary">Save procurement</button></div>
+        </form>
+        <p id="procurementResult" class="success"></p>
+      </section>
+
+      <section class="card section-spaced">
+        <h3>Recent Procurement Entries</h3>
+        <div class="table-wrap table-top">
+          <table>
+            <thead><tr><th>Produce</th><th>Type</th><th>Tonnage (kg)</th><th>Cost (UGX)</th><th>Branch</th><th>Date</th></tr></thead>
+            <tbody id="procurementRows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="../js/pages/procurement.js"></script>
+</body>
+</html>

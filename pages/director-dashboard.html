@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Director Dashboard | KGL</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <div class="brand">KGL Director</div>
+      <nav class="nav">
+        <a href="director-dashboard.html">Dashboard</a>
+        <a href="reports.html">Reports (Aggregated)</a>
+        <a href="#" class="nav-logout" data-action="logout">Logout</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <div id="topbarSlot"></div>
+
+      <section class="card">
+        <div class="actions-row">
+          <p class="small" id="directorSource">Source: Loading...</p>
+          <button id="directorRefreshBtn" class="btn btn-secondary" type="button">Refresh</button>
+        </div>
+      </section>
+
+      <section class="grid-3 section-spaced">
+        <article class="card"><p>Total Procurement Cost</p><div id="kpiProc" class="kpi">UGX 0</div></article>
+        <article class="card"><p>Total Cash Sales</p><div id="kpiSales" class="kpi">UGX 0</div></article>
+        <article class="card"><p>Total Credit Outstanding</p><div id="kpiCredit" class="kpi">UGX 0</div></article>
+      </section>
+
+      <section class="grid-3 section-spaced">
+        <article class="card"><p>Procurement Records</p><div id="procCount" class="kpi">0</div></article>
+        <article class="card"><p>Sales Records</p><div id="salesCount" class="kpi">0</div></article>
+        <article class="card"><p>Credit Records</p><div id="creditCount" class="kpi">0</div></article>
+      </section>
+
+      <section class="card section-spaced">
+        <h3>Quick Actions</h3>
+        <div class="quick-links">
+          <a class="quick-link" href="reports.html">Open full reports</a>
+          <a class="quick-link" href="procurement.html">View procurements</a>
+          <a class="quick-link" href="sales.html">View sales</a>
+          <a class="quick-link" href="credit-sales.html">View credit sales</a>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="../js/pages/director-dashboard.js"></script>
+</body>
+</html>
