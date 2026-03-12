@@ -23,6 +23,10 @@
   - `http://localhost:4000/api`
 - Config file:
   - `js/api.js`
+ - Quick toggle (optional):
+   - `?api=local` (force local backend)
+   - `?api=render` (force Render backend)
+   - `?api=clear` (clear override)
 
 ## Authentication
 - Login is backend-authenticated.

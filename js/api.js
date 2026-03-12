@@ -6,6 +6,22 @@ const DEFAULT_API_BASE = (() => {
 })();
 const SESSION_KEY = "kgl_user";
 const API_BASE_KEY = "kgl_api_base";
+const LOCAL_API_BASE = "http://localhost:4000/api";
+const RENDER_API_BASE = "https://karibu-groceries-backend-d5zh.onrender.com/api";
+
+// Optional URL toggle: ?api=local | ?api=render | ?api=clear
+(() => {
+  try {
+    const params = new URLSearchParams(window.location.search || "");
+    const mode = String(params.get("api") || "").trim().toLowerCase();
+    if (!mode) return;
+    if (mode === "local") localStorage.setItem(API_BASE_KEY, LOCAL_API_BASE);
+    else if (mode === "render") localStorage.setItem(API_BASE_KEY, RENDER_API_BASE);
+    else if (mode === "clear") localStorage.removeItem(API_BASE_KEY);
+  } catch {
+    // ignore
+  }
+})();
 
 function baseUrl() {
   try {
