@@ -1,7 +1,20 @@
 $ErrorActionPreference = "Stop"
 
-$backendDir = "C:\Users\USER\Desktop\kgl-backend"
-$frontendDir = "C:\Users\USER\Desktop\kgl-frontend"
+$repoRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
+$backendDir = Join-Path $repoRoot "kgl-backend"
+$frontendDir = Join-Path $repoRoot "kgl-frontend"
+
+if (-not (Test-Path $backendDir)) {
+  Write-Host "Backend folder not found: $backendDir"
+  Write-Host "Ensure you are running this script from the repo's kgl-frontend folder."
+  exit 1
+}
+
+if (-not (Test-Path $frontendDir)) {
+  Write-Host "Frontend folder not found: $frontendDir"
+  Write-Host "Ensure you are running this script from the repo's kgl-frontend folder."
+  exit 1
+}
 $backendPort = 4000
 $frontendPort = 5500
 

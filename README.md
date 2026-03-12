@@ -9,10 +9,10 @@
 
 ### Manual start
 1. Ensure backend is running first:
-   - Folder: `C:\Users\USER\Desktop\kgl-backend`
+   - Folder: `C:\Users\USER\Desktop\karibu-groceries-ltmd\kgl-backend`
    - Command: `npm run dev`
 2. Start a static server from frontend folder:
-   - Folder: `C:\Users\USER\Desktop\kgl-frontend`
+   - Folder: `C:\Users\USER\Desktop\karibu-groceries-ltmd\kgl-frontend`
    - Example: `npx serve .`
    - Or use VS Code Live Server
 3. Open login page:
@@ -36,7 +36,11 @@
   - `attendant1`
   - `attendant2`
   - `orban`
-- Passwords are intentionally not published in this repository.
+- Default password for all demo users: `kgl123`
+
+## Backend Shortcut
+- When `kgl-frontend` and `kgl-backend` are in the same repo, the backend also serves the frontend.
+- Open `http://localhost:4000/` or `http://localhost:4000/pages/login.html`.
 
 ## Dashboard Routing by Role
 - `manager` -> `pages/manager-dashboard.html`
