@@ -3,4 +3,4 @@ backend/node_modules/
 backend/.env
 *.log
 npm-debug.log*
-
+.DS_Store

@@ -2,7 +2,7 @@ const DEFAULT_API_BASE = (() => {
   const host = window.location.hostname || "localhost";
   const localHosts = new Set(["localhost", "127.0.0.1"]);
   if (localHosts.has(host)) return "http://localhost:4000/api";
-  return "https://kgl-backend-e1vj.onrender.com/api";
+  return "https://kgl-backend.onrender.com/api";
 })();
 const SESSION_KEY = "kgl_user";
 const API_BASE_KEY = "kgl_api_base";
@@ -134,4 +134,3 @@ export async function getReportSummary() {
 export async function getReportStock() {
   return request("/reports/stock");
 }
-
